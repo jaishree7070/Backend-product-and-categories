@@ -51,7 +51,7 @@ const getProductsByCategoryId = async (req, res, next) => {
     return next(
       new HttpError(
         "Something went wrong, Fetching products failed",
-        500 //NOT FOUND
+        500 
       )
     );
   }
@@ -188,7 +188,7 @@ const deleteProductById = async (req, res, next) => {
 
   } catch (e) {
     return next(
-      new HttpError(e, 500)
+      new HttpError("Something went wrong! Deleting the product failed ", 500)
     );
   }
   res.status(200).json({ message: "Deleted the product" });
